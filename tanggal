@@ -1,0 +1,21 @@
+bulan = int(input("masukkan bulan : "))
+tahun = int(input("masukkan tahun : "))
+
+while bulan < 1 or bulan > 12:
+    print("bulan tidak valid")
+
+if bulan == 2:
+    if tahun % 4 == 0 and (tahun % 100 != 0 or tahun % 400 == 0):
+        print("bulan", bulan, "tahun", tahun, "memiliki 29 hari")
+        jumlah_hari = 29
+    else:
+        print("bulan", bulan, "tahun", tahun, "memiliki 28 hari")
+        jumlah_hari = 28
+elif bulan in [1, 3, 5, 7, 8, 10, 12]:
+    print("bulan", bulan, "tahun", tahun, "memiliki 31 hari")
+    jumlah_hari = 31
+else:
+    print("bulan", bulan, "tahun", tahun, "memiliki 30 hari")
+    jumlah_hari = 30
+
+print("Jumlah Hari:", jumlah_hari)
